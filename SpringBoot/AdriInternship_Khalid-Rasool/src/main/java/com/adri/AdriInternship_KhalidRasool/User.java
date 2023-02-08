@@ -12,10 +12,10 @@ import javax.persistence.Table;
 public class User {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private Integer id;
+  private Integer user_id;
 
   @Column(name="user_name")
-  private String name;
+  private String user_name;
 
   @Column(name="email")
   private String email;
@@ -27,9 +27,9 @@ public class User {
     
   }
 
-public User(Integer id, String name, String email, String information) {
-    this.id = id;
-    this.name = name;
+public User( String name, String email, String information) {
+    //this.user_id = id;
+    this.user_name = name;
     this.email = email;
     this.information = information;
   }
@@ -37,19 +37,19 @@ public User(Integer id, String name, String email, String information) {
 
 
   public Integer getId() {
-    return id;
+    return user_id;
   }
 
   public void setId(Integer id) {
-    this.id = id;
+    this.user_id = id;
   }
 
   public String getName() {
-    return name;
+    return user_name;
   }
 
   public void setName(String name) {
-    this.name = name;
+    this.user_name = name;
   }
 
   public String getEmail() {
