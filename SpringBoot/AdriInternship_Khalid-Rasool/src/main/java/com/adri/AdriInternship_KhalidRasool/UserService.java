@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+//the srevices class for user repository
 @Service
 @Transactional
 public class UserService {
@@ -18,18 +19,15 @@ public class UserService {
             return repo.findAll();
         }
          
-        public void save(User user) {
-            repo.save(user);
+        public User save(User user) {
+            return repo.save(user);
         }
          
         public User get(Integer id) {
             return repo.findById(id).get();
         }
-
-        
-         
-        public void delete(Integer id) {
-            repo.deleteById(id);
+        public List<User> findUser(String username) {
+            return repo.findByusernameIgnoreCase(username);
         }
-    
+        
 }

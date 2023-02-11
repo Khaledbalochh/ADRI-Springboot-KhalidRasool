@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//the entity class for user table from the database
 @Entity 
 @Table
 public class User {
@@ -15,7 +16,7 @@ public class User {
   private Integer user_id;
 
   @Column(name="user_name")
-  private String user_name;
+  private String username;
 
   @Column(name="email")
   private String email;
@@ -28,8 +29,7 @@ public class User {
   }
 
 public User( String name, String email, String information) {
-    //this.user_id = id;
-    this.user_name = name;
+    this.username = name;
     this.email = email;
     this.information = information;
   }
@@ -45,11 +45,11 @@ public User( String name, String email, String information) {
   }
 
   public String getName() {
-    return user_name;
+    return username;
   }
 
   public void setName(String name) {
-    this.user_name = name;
+    this.username = name;
   }
 
   public String getEmail() {
